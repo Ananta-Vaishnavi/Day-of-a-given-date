@@ -1,0 +1,81 @@
+#include<stdio.h>
+int main()
+{
+int yr,date,month,mdays,year,day,leap=0;
+printf("Enter the date, month and year\n");
+scanf("%d %d %d",&date,&month,&year);
+for(yr=1900;yr<year;yr++)
+{
+if (((yr % 4 == 0) && (yr % 100!= 0)) || (yr%400 == 0))
+leap=++leap;}
+switch (month)
+    {
+       
+        case 2:
+        mdays=31;
+        break;
+         case 3: 
+        mdays=59;
+        break;
+        case 4:
+        mdays=90;
+        break;
+        case 5: 
+        mdays=120;
+        break;
+        case 6:
+        mdays=151;
+        break;
+         case 7: 
+        mdays=181;
+        break;
+        case 8:
+        mdays=212;
+        break;
+         case 9: 
+        mdays=243;
+        break;
+        case 10:
+        mdays=273;
+        break;
+        case 11: 
+        mdays=304;
+        break;
+        case 12:
+        mdays=334;
+        break;
+}
+
+day=(year-1900+leap+mdays+date);
+
+if (month>2&&(((yr % 4 == 0) && (yr % 100!= 0)) || (yr%400 == 0)))
+day=day+1;
+if (day>7)
+day=day%7;
+   switch (day)
+    {
+        case 1: 
+        printf("Mon");
+        break;
+        case 2:
+        printf("Tue");
+        break;
+         case 3: 
+        printf("Wed");
+        break;
+        case 4:
+        printf("Thu");
+        break;
+        case 5: 
+        printf("Fri");
+        break;
+        case 6:
+        printf("Sat");
+        break;
+         case 7: 
+        printf("Sun");
+        break;
+       }
+}
+
+
